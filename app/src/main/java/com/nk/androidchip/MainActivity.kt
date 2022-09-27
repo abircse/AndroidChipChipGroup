@@ -43,4 +43,17 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
+
+    private fun getKeyWordChips(): MutableList<String>{
+        val dataList: MutableList<String> = mutableListOf()
+        for (i in 0 until chipGroup.childCount) {
+            val chip = chipGroup.getChildAt(i) as Chip
+            if (!chip.isChecked) {
+                dataList.add(chip.text.toString())
+            }
+        }
+        return dataList
+    }
 }
